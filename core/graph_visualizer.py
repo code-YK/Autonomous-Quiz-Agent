@@ -1,29 +1,28 @@
 # core/graph_visualizer.py
-
 from pathlib import Path
 from core.logger import get_logger
 
 logger = get_logger(__name__)
 
+from agents.graph import build_graph
+from pathlib import Path
 
-def save_graph_mermaid(compiled_graph, filename: str = "quiz_agent_graph.md"):
-    """
-    Saves LangGraph structure as a Mermaid diagram.
-    No external system dependencies required.
-    """
+def save_graph_png():
+    graph = build_graph()
 
-    try:
-        artifacts_dir = Path("artifacts/graphs")
-        artifacts_dir.mkdir(parents=True, exist_ok=True)
+    # Get Mermaid-rendered PNG bytes
+    png_bytes = graph.get_graph().draw_mermaid_png()
 
-        graph_path = artifacts_dir / filename
+    # Output path
+    out_dir = Path("artifacts/graphs")
+    out_dir.mkdir(parents=True, exist_ok=True)
 
-        mermaid_text = compiled_graph.get_graph().draw_mermaid()
+    out_path = out_dir / "quiz_agent_graph.png"
 
-        with open(graph_path, "w", encoding="utf-8") as f:
-            f.write(mermaid_text)
+    with open(out_path, "wb") as f:
+        f.write(png_bytes)
 
-        logger.info("LangGraph Mermaid diagram saved at %s", graph_path.resolve())
+    print(f"Graph image saved at: {out_path.resolve()}")
 
-    except Exception as e:
-        logger.warning("Failed to save LangGraph Mermaid diagram: %s", str(e))
+if __name__ == "__main__":
+    save_graph_png()
