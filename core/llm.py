@@ -24,7 +24,7 @@ _validate_env()
 
 # LLM INSTANCE (SINGLETON)
 llm = ChatGroq(
-    api_key=GROQ_API_KEY,
+    groq_api_key=GROQ_API_KEY,
     model=DEFAULT_MODEL,
     temperature=TEMPERATURE,
     max_tokens=MAX_TOKENS,
@@ -36,6 +36,9 @@ def invoke_llm(prompt: str):
     Standardized LLM invocation.
     Always returns parsed content (string / JSON).
     """
+
+    logger.debug(f"GROQ_API_KEY present: {bool(GROQ_API_KEY)}")
+
     try:
         logger.debug("Invoking LLM...")
         response = llm.invoke([HumanMessage(content=prompt)])
