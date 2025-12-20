@@ -1,7 +1,8 @@
 import json
-from agents.prompts.validate_prompt import VALIDATE_PROMPT
+from agents.prompts import VALIDATE_PROMPT
 from core.llm import invoke_llm
 from core.logger import get_logger
+from core.llm_parser import extract_json, LLMParseError
 
 logger = get_logger(__name__)
 
@@ -11,25 +12,34 @@ def difficulty_validator(state):
 
     ranked_questions = state["ranked_questions"]
 
-    raw_response = invoke_llm(
-        VALIDATE_PROMPT.format(ranked_questions=ranked_questions)
+    try:
+        raw_response = invoke_llm(
+            VALIDATE_PROMPT.format(ranked_questions=ranked_questions)
+        )
+
+        response = extract_json(raw_response)
+
+        if not isinstance(response, dict):
+            raise ValueError("Validator response is not a JSON object")
+
+    except (LLMParseError, ValueError) as e:
+        logger.warning("Validator output invalid: %s", str(e))
+        return {
+            "validation_passed": False,
+            "validation_feedback": "Invalid validator response format",
+            "retry_count": state.get("retry_count", 0) + 1
+        }
+
+    validation_passed = response.get(
+        "validation_passed",
+        response.get("valid", False)  # fallback if model uses "valid"
     )
 
-    # SAFETY: Parse response as JSON
-    if isinstance(raw_response, str):
-        try:
-            response = json.loads(raw_response)
-        except json.JSONDecodeError:
-            logger.warning("Validation response not JSON. Failing validation.")
-            return {
-                "validation_passed": False,
-                "validation_feedback": "Invalid response format from validator"
-            }
-    else:
-        response = raw_response
+    feedback = response.get(
+        "feedback",
+        response.get("reason", "")
+    )
 
-    validation_passed = response.get("validation_passed", False)
-    feedback = response.get("feedback", "")
 
     if validation_passed:
         logger.info("Difficulty validation PASSED")
