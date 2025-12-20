@@ -1,0 +1,1145 @@
+2025-12-21 01:51:22,387 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 01:51:22,390 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:51:22,688 | ERROR | core.llm | LLM invocation failed
+Traceback (most recent call last):
+  File "E:\autonomous_quiz_agent\core\llm.py", line 41, in invoke_llm
+    response = llm.invoke([HumanMessage(content=prompt)])
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_groq\chat_models.py", line 593, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `llama-3.1-70b-versatile` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2025-12-21 01:51:23,156 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 01:51:23,157 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:51:23,202 | ERROR | core.llm | LLM invocation failed
+Traceback (most recent call last):
+  File "E:\autonomous_quiz_agent\core\llm.py", line 41, in invoke_llm
+    response = llm.invoke([HumanMessage(content=prompt)])
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_groq\chat_models.py", line 593, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `llama-3.1-70b-versatile` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2025-12-21 01:55:22,145 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 01:55:22,147 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:55:22,651 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:57:53,681 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 01:57:53,684 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:57:54,191 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:57:54,192 | INFO | agents.extractors.concept_extractor | Concept extraction completed
+2025-12-21 01:57:54,193 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2025-12-21 01:57:54,193 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:57:54,596 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:57:54,598 | INFO | agents.organizers.hierarchy_builder | Hierarchy built successfully
+2025-12-21 01:57:54,600 | INFO | agents.generators.quiz_generator | Generating quiz questions
+2025-12-21 01:57:54,600 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:57:55,148 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:57:55,150 | INFO | agents.generators.quiz_generator | Quiz generation completed
+2025-12-21 01:57:55,152 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 01:57:55,152 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:57:55,683 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:57:55,685 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 01:57:55,687 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 01:57:55,687 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:57:56,686 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:57:56,688 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 01:57:56,689 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 01:57:56,690 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:57:57,223 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:57:57,225 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 01:57:57,227 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 01:57:57,227 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:57:58,023 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:57:58,026 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 01:57:58,027 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 01:57:58,027 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:57:58,829 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:57:58,831 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 01:57:58,832 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 01:57:58,833 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:58:07,849 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:58:07,851 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 01:58:07,852 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 01:58:07,853 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:58:13,698 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:58:13,699 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 01:58:13,700 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 01:58:13,701 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:58:21,252 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:58:21,253 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 01:58:21,256 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 01:58:21,257 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:58:26,757 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:58:26,758 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 01:58:26,760 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 01:58:26,761 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:58:32,721 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:58:32,723 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 01:58:32,725 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 01:58:32,726 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:58:38,544 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:58:38,545 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 01:58:38,547 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 01:58:38,548 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:58:46,114 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:58:46,115 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 01:58:46,116 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 01:58:46,117 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:58:51,996 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:58:51,997 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 01:58:51,999 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 01:58:52,000 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:59:00,814 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:59:00,815 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 01:59:00,817 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 01:59:00,817 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:59:06,481 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:59:06,482 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 01:59:06,484 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 01:59:06,485 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:59:13,462 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:59:13,465 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 01:59:13,466 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 01:59:13,467 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:59:19,156 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:59:19,157 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 01:59:19,158 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 01:59:19,158 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:59:25,994 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:59:25,996 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 01:59:25,998 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 01:59:25,999 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:59:31,991 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:59:31,992 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 01:59:31,993 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 01:59:31,994 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:59:42,020 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:59:42,022 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 01:59:42,024 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 01:59:42,026 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:59:47,640 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:59:47,641 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 01:59:47,641 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 01:59:47,642 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:59:54,747 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:59:54,748 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 01:59:54,977 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 01:59:54,977 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 01:59:58,467 | DEBUG | core.llm | LLM response received.
+2025-12-21 01:59:58,468 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 02:03:15,757 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 02:03:15,759 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:03:16,273 | DEBUG | core.llm | LLM response received.
+2025-12-21 02:03:16,273 | INFO | agents.extractors.concept_extractor | Concept extraction completed
+2025-12-21 02:03:16,274 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2025-12-21 02:03:16,274 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:03:16,656 | DEBUG | core.llm | LLM response received.
+2025-12-21 02:03:16,658 | INFO | agents.organizers.hierarchy_builder | Hierarchy built successfully
+2025-12-21 02:03:16,659 | INFO | agents.generators.quiz_generator | Generating quiz questions
+2025-12-21 02:03:16,660 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:03:17,199 | DEBUG | core.llm | LLM response received.
+2025-12-21 02:03:17,201 | INFO | agents.generators.quiz_generator | Quiz generation completed
+2025-12-21 02:03:17,202 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 02:03:17,202 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:03:17,892 | DEBUG | core.llm | LLM response received.
+2025-12-21 02:03:17,893 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 02:03:17,895 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 02:03:17,895 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:03:18,370 | DEBUG | core.llm | LLM response received.
+2025-12-21 02:03:18,371 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 02:03:18,372 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 02:03:18,372 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:03:19,115 | DEBUG | core.llm | LLM response received.
+2025-12-21 02:03:19,116 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 02:03:19,117 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 02:03:19,118 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:03:19,566 | DEBUG | core.llm | LLM response received.
+2025-12-21 02:03:19,567 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 02:03:19,568 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 02:03:19,568 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:03:20,089 | DEBUG | core.llm | LLM response received.
+2025-12-21 02:03:20,091 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 02:03:20,092 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 02:03:20,093 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:03:25,870 | DEBUG | core.llm | LLM response received.
+2025-12-21 02:03:25,871 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 02:03:25,873 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 02:03:25,873 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:03:31,954 | DEBUG | core.llm | LLM response received.
+2025-12-21 02:03:31,955 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 02:03:31,955 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 02:03:31,956 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:03:42,245 | DEBUG | core.llm | LLM response received.
+2025-12-21 02:03:42,246 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 02:03:42,247 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 02:03:42,248 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:03:47,920 | DEBUG | core.llm | LLM response received.
+2025-12-21 02:03:47,921 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 02:03:47,921 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 02:03:47,922 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:03:54,565 | DEBUG | core.llm | LLM response received.
+2025-12-21 02:03:54,567 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 02:03:54,569 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 02:03:54,569 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:04:00,549 | DEBUG | core.llm | LLM response received.
+2025-12-21 02:04:00,550 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 02:04:00,551 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 02:04:00,552 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:04:10,699 | DEBUG | core.llm | LLM response received.
+2025-12-21 02:04:10,701 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 02:04:10,702 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 02:04:10,703 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:04:16,537 | DEBUG | core.llm | LLM response received.
+2025-12-21 02:04:16,539 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 02:04:16,540 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 02:04:16,541 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:04:24,641 | DEBUG | core.llm | LLM response received.
+2025-12-21 02:04:24,642 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 02:04:24,643 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 02:04:24,643 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:04:29,811 | ERROR | core.llm | LLM invocation failed
+Traceback (most recent call last):
+  File "E:\autonomous_quiz_agent\core\llm.py", line 41, in invoke_llm
+    response = llm.invoke([HumanMessage(content=prompt)])
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_groq\chat_models.py", line 593, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-12-21 02:04:30,443 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 02:04:30,444 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:04:30,486 | ERROR | core.llm | LLM invocation failed
+Traceback (most recent call last):
+  File "E:\autonomous_quiz_agent\core\llm.py", line 41, in invoke_llm
+    response = llm.invoke([HumanMessage(content=prompt)])
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_groq\chat_models.py", line 593, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-12-21 02:06:28,786 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 02:06:28,788 | INFO | agents.extractors.concept_extractor | Concept extraction completed
+2025-12-21 02:06:28,789 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2025-12-21 02:06:28,790 | INFO | agents.organizers.hierarchy_builder | Hierarchy built successfully
+2025-12-21 02:06:28,790 | INFO | agents.generators.quiz_generator | Generating quiz questions
+2025-12-21 02:06:28,791 | INFO | agents.generators.quiz_generator | Quiz generation completed
+2025-12-21 02:06:28,791 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 02:06:28,792 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 02:06:28,792 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 02:06:28,793 | WARNING | agents.validators.difficulty_validator | Difficulty validation FAILED: Invalid difficulty distribution
+2025-12-21 02:06:28,796 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 02:06:28,797 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 02:06:28,797 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 02:06:28,798 | WARNING | agents.validators.difficulty_validator | Difficulty validation FAILED: Invalid difficulty distribution
+2025-12-21 02:06:28,887 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 02:06:28,888 | WARNING | agents.validators.difficulty_validator | Difficulty validation FAILED: Invalid difficulty distribution
+2025-12-21 02:07:46,774 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 02:07:46,777 | INFO | agents.extractors.concept_extractor | Concept extraction completed
+2025-12-21 02:07:46,778 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2025-12-21 02:07:46,778 | INFO | agents.organizers.hierarchy_builder | Hierarchy built successfully
+2025-12-21 02:07:46,779 | INFO | agents.generators.quiz_generator | Generating quiz questions
+2025-12-21 02:07:46,779 | INFO | agents.generators.quiz_generator | Quiz generation completed
+2025-12-21 02:07:46,779 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 02:07:46,780 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 02:07:46,780 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 02:07:46,781 | WARNING | agents.validators.difficulty_validator | Difficulty validation FAILED: Invalid difficulty distribution
+2025-12-21 02:07:46,782 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 02:07:46,783 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 02:07:46,783 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 02:07:46,784 | WARNING | agents.validators.difficulty_validator | Difficulty validation FAILED: Invalid difficulty distribution
+2025-12-21 02:07:46,786 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 02:07:46,787 | WARNING | agents.validators.difficulty_validator | Difficulty validation FAILED: Invalid difficulty distribution
+2025-12-21 02:54:37,950 | WARNING | agents.graph | Failed to save LangGraph image: Install pygraphviz to draw graphs: `pip install pygraphviz`.
+2025-12-21 02:54:37,956 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 02:54:37,958 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:54:38,162 | ERROR | core.llm | LLM invocation failed
+Traceback (most recent call last):
+  File "E:\Autonomous_Quiz_Agent\core\llm.py", line 41, in invoke_llm
+    response = llm.invoke([HumanMessage(content=prompt)])
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_groq\chat_models.py", line 593, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-12-21 02:57:22,215 | WARNING | agents.graph | Failed to save LangGraph image: Install pygraphviz to draw graphs: `pip install pygraphviz`.
+2025-12-21 02:57:22,221 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 02:57:22,223 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 02:57:22,441 | ERROR | core.llm | LLM invocation failed
+Traceback (most recent call last):
+  File "E:\Autonomous_Quiz_Agent\core\llm.py", line 41, in invoke_llm
+    response = llm.invoke([HumanMessage(content=prompt)])
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_groq\chat_models.py", line 593, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-12-21 03:04:59,440 | WARNING | core.llm | GROQ_API_KEY at runtime: gsk_g3LmdzCEz5t5************************************
+2025-12-21 03:05:10,258 | WARNING | core.llm | GROQ_API_KEY at runtime: gsk_g3LmdzCEz5t5************************************
+2025-12-21 03:05:15,720 | WARNING | core.llm | GROQ_API_KEY at runtime: gsk_g3LmdzCEz5t5************************************
+2025-12-21 03:05:22,290 | WARNING | core.llm | GROQ_API_KEY at runtime: gsk_g3LmdzCEz5t5************************************
+2025-12-21 03:05:55,923 | WARNING | core.llm | GROQ_API_KEY at runtime: gsk_g3LmdzCEz5t5************************************
+2025-12-21 03:06:21,700 | WARNING | agents.graph | Failed to save LangGraph image: Install pygraphviz to draw graphs: `pip install pygraphviz`.
+2025-12-21 03:06:21,703 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 03:06:21,704 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:06:21,914 | ERROR | core.llm | LLM invocation failed
+Traceback (most recent call last):
+  File "E:\Autonomous_Quiz_Agent\core\llm.py", line 44, in invoke_llm
+    response = llm.invoke([HumanMessage(content=prompt)])
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_groq\chat_models.py", line 593, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-12-21 03:25:54,846 | WARNING | agents.graph | Failed to save LangGraph image: Install pygraphviz to draw graphs: `pip install pygraphviz`.
+2025-12-21 03:25:54,850 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 03:25:54,851 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:25:55,062 | ERROR | core.llm | LLM invocation failed
+Traceback (most recent call last):
+  File "E:\Autonomous_Quiz_Agent\core\llm.py", line 41, in invoke_llm
+    response = llm.invoke([HumanMessage(content=prompt)])
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_groq\chat_models.py", line 593, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-12-21 03:27:10,653 | WARNING | agents.graph | Failed to save LangGraph image: Install pygraphviz to draw graphs: `pip install pygraphviz`.
+2025-12-21 03:27:10,659 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 03:27:10,660 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:27:10,904 | ERROR | core.llm | LLM invocation failed
+Traceback (most recent call last):
+  File "E:\Autonomous_Quiz_Agent\core\llm.py", line 41, in invoke_llm
+    response = llm.invoke([HumanMessage(content=prompt)])
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_groq\chat_models.py", line 593, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-12-21 03:29:41,089 | WARNING | agents.graph | Failed to save LangGraph image: Install pygraphviz to draw graphs: `pip install pygraphviz`.
+2025-12-21 03:30:13,649 | WARNING | agents.graph | Failed to save LangGraph image: Install pygraphviz to draw graphs: `pip install pygraphviz`.
+2025-12-21 03:30:16,154 | WARNING | agents.graph | Failed to save LangGraph image: Install pygraphviz to draw graphs: `pip install pygraphviz`.
+2025-12-21 03:30:27,639 | WARNING | agents.graph | Failed to save LangGraph image: Install pygraphviz to draw graphs: `pip install pygraphviz`.
+2025-12-21 03:30:55,231 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 03:30:55,233 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:30:55,428 | ERROR | core.llm | LLM invocation failed
+Traceback (most recent call last):
+  File "E:\Autonomous_Quiz_Agent\core\llm.py", line 41, in invoke_llm
+    response = llm.invoke([HumanMessage(content=prompt)])
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_groq\chat_models.py", line 593, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-12-21 03:41:52,479 | WARNING | agents.graph | Failed to save LangGraph image: Install pygraphviz to draw graphs: `pip install pygraphviz`.
+2025-12-21 03:42:56,163 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 03:42:56,165 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:42:56,167 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:42:56,358 | ERROR | core.llm | LLM invocation failed
+Traceback (most recent call last):
+  File "E:\Autonomous_Quiz_Agent\core\llm.py", line 44, in invoke_llm
+    response = llm.invoke([HumanMessage(content=prompt)])
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_groq\chat_models.py", line 593, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-12-21 03:46:44,216 | WARNING | agents.graph | Failed to save LangGraph image: Install pygraphviz to draw graphs: `pip install pygraphviz`.
+2025-12-21 03:46:46,861 | WARNING | agents.graph | Failed to save LangGraph image: Install pygraphviz to draw graphs: `pip install pygraphviz`.
+2025-12-21 03:47:42,876 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 03:47:42,878 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:47:42,880 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:47:43,068 | ERROR | core.llm | LLM invocation failed
+Traceback (most recent call last):
+  File "E:\Autonomous_Quiz_Agent\core\llm.py", line 44, in invoke_llm
+    response = llm.invoke([HumanMessage(content=prompt)])
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_groq\chat_models.py", line 593, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-12-21 03:49:48,267 | WARNING | agents.graph | Failed to save LangGraph image: Install pygraphviz to draw graphs: `pip install pygraphviz`.
+2025-12-21 03:50:12,455 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 03:50:12,457 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:50:12,458 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:50:12,717 | ERROR | core.llm | LLM invocation failed
+Traceback (most recent call last):
+  File "E:\Autonomous_Quiz_Agent\core\llm.py", line 44, in invoke_llm
+    response = llm.invoke([HumanMessage(content=prompt)])
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\langchain_groq\chat_models.py", line 593, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\autonomous_quiz_agent\venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-12-21 03:58:11,716 | WARNING | agents.graph | Failed to save LangGraph image: Install pygraphviz to draw graphs: `pip install pygraphviz`.
+2025-12-21 03:58:40,044 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 03:58:40,046 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:58:40,047 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:58:40,399 | DEBUG | core.llm | LLM response received.
+2025-12-21 03:58:40,401 | INFO | agents.extractors.concept_extractor | Concept extraction completed
+2025-12-21 03:58:40,403 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2025-12-21 03:58:40,404 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:58:40,405 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:58:40,895 | DEBUG | core.llm | LLM response received.
+2025-12-21 03:58:40,897 | INFO | agents.organizers.hierarchy_builder | Hierarchy built successfully
+2025-12-21 03:58:40,898 | INFO | agents.generators.quiz_generator | Generating quiz questions
+2025-12-21 03:58:40,899 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:58:40,900 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:58:41,599 | DEBUG | core.llm | LLM response received.
+2025-12-21 03:58:41,602 | INFO | agents.generators.quiz_generator | Quiz generation completed
+2025-12-21 03:58:41,605 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 03:58:41,606 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:58:41,609 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:58:42,334 | DEBUG | core.llm | LLM response received.
+2025-12-21 03:58:42,337 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 03:58:42,341 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 03:58:42,344 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:58:42,347 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:58:43,208 | DEBUG | core.llm | LLM response received.
+2025-12-21 03:58:43,211 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 03:58:43,215 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 03:58:43,216 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:58:43,218 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:58:43,796 | DEBUG | core.llm | LLM response received.
+2025-12-21 03:58:43,797 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 03:58:43,798 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 03:58:43,799 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:58:43,801 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:58:44,620 | DEBUG | core.llm | LLM response received.
+2025-12-21 03:58:44,621 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 03:58:44,623 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 03:58:44,624 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:58:44,624 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:58:51,294 | DEBUG | core.llm | LLM response received.
+2025-12-21 03:58:51,296 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 03:58:51,297 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 03:58:51,298 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:58:51,299 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:58:58,161 | DEBUG | core.llm | LLM response received.
+2025-12-21 03:58:58,163 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 03:58:58,166 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 03:58:58,167 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:58:58,168 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:59:04,956 | DEBUG | core.llm | LLM response received.
+2025-12-21 03:59:04,957 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 03:59:04,958 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 03:59:04,959 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:59:04,959 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:59:13,094 | DEBUG | core.llm | LLM response received.
+2025-12-21 03:59:13,095 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 03:59:13,096 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 03:59:13,096 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:59:13,097 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:59:19,959 | DEBUG | core.llm | LLM response received.
+2025-12-21 03:59:19,960 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 03:59:19,961 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 03:59:19,962 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:59:19,963 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:59:29,256 | DEBUG | core.llm | LLM response received.
+2025-12-21 03:59:29,259 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 03:59:29,263 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 03:59:29,265 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:59:29,267 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:59:36,140 | DEBUG | core.llm | LLM response received.
+2025-12-21 03:59:36,141 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 03:59:36,142 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 03:59:36,142 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:59:36,143 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:59:45,202 | DEBUG | core.llm | LLM response received.
+2025-12-21 03:59:45,203 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 03:59:45,205 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 03:59:45,205 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:59:45,206 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:59:51,946 | DEBUG | core.llm | LLM response received.
+2025-12-21 03:59:51,947 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 03:59:51,949 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 03:59:51,950 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:59:51,950 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 03:59:58,520 | DEBUG | core.llm | LLM response received.
+2025-12-21 03:59:58,523 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 03:59:58,524 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 03:59:58,525 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 03:59:58,526 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:00:05,362 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:00:05,363 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 04:00:05,364 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 04:00:05,365 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:00:05,365 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:00:13,215 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:00:13,216 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 04:00:13,217 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 04:00:13,218 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:00:13,218 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:00:19,993 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:00:19,995 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 04:00:19,997 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 04:00:19,998 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:00:19,999 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:00:27,099 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:00:27,100 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 04:00:27,101 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 04:00:27,101 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:00:27,102 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:00:34,013 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:00:34,014 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 04:00:34,016 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 04:00:34,017 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:00:34,017 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:00:42,909 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:00:42,912 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 04:00:42,914 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 04:00:42,916 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:00:42,918 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:00:49,729 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:00:49,731 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 04:00:49,732 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 04:00:49,733 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:00:49,733 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:00:56,842 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:00:56,843 | WARNING | agents.validators.difficulty_validator | Validation response not JSON. Failing validation.
+2025-12-21 04:28:00,899 | INFO | core.graph_visualizer | LangGraph Mermaid diagram saved at E:\Autonomous_Quiz_Agent\artifacts\graphs\quiz_agent_graph.md
+2025-12-21 04:28:00,904 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 04:28:00,905 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:28:00,906 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:28:01,466 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:28:01,467 | INFO | agents.extractors.concept_extractor | Concept extraction completed
+2025-12-21 04:28:01,468 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2025-12-21 04:28:01,469 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:28:01,469 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:28:01,805 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:28:01,808 | INFO | agents.organizers.hierarchy_builder | Hierarchy built successfully
+2025-12-21 04:28:01,811 | INFO | agents.generators.quiz_generator | Generating quiz questions
+2025-12-21 04:28:01,812 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:28:01,814 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:28:02,333 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:28:02,337 | INFO | agents.generators.quiz_generator | Quiz generation completed
+2025-12-21 04:28:02,340 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 04:28:02,341 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:28:02,343 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:28:02,887 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:28:02,888 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 04:28:02,889 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 04:28:02,890 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:28:02,890 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:28:03,038 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:28:03,041 | INFO | agents.validators.difficulty_validator | Difficulty validation PASSED
+2025-12-21 04:31:46,387 | INFO | core.graph_visualizer | LangGraph Mermaid diagram saved at E:\Autonomous_Quiz_Agent\artifacts\graphs\quiz_agent_graph.md
+2025-12-21 04:31:46,392 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 04:31:46,393 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:31:46,394 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:31:46,896 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:31:46,898 | INFO | agents.extractors.concept_extractor | Concept extraction completed
+2025-12-21 04:31:46,900 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2025-12-21 04:31:46,901 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:31:46,902 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:31:47,413 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:31:47,416 | INFO | agents.organizers.hierarchy_builder | Hierarchy built successfully
+2025-12-21 04:31:47,419 | INFO | agents.generators.quiz_generator | Generating quiz questions
+2025-12-21 04:31:47,420 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:31:47,422 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:31:48,153 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:31:48,154 | INFO | agents.generators.quiz_generator | Quiz generation completed
+2025-12-21 04:31:48,155 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 04:31:48,156 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:31:48,156 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:31:48,886 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:31:48,887 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 04:31:48,888 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 04:31:48,889 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:31:48,889 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:31:49,028 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:31:49,031 | INFO | agents.validators.difficulty_validator | Difficulty validation PASSED
+2025-12-21 04:33:09,603 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 04:33:09,606 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:33:09,607 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:33:09,978 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:33:09,979 | INFO | agents.extractors.concept_extractor | Concept extraction completed
+2025-12-21 04:33:09,980 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2025-12-21 04:33:09,981 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:33:09,982 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:33:10,478 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:33:10,480 | INFO | agents.organizers.hierarchy_builder | Hierarchy built successfully
+2025-12-21 04:33:10,481 | INFO | agents.generators.quiz_generator | Generating quiz questions
+2025-12-21 04:33:10,482 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:33:10,482 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:33:10,982 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:33:10,983 | INFO | agents.generators.quiz_generator | Quiz generation completed
+2025-12-21 04:33:10,984 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 04:33:10,985 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:33:10,985 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:33:11,562 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:33:11,564 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 04:33:11,565 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 04:33:11,567 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:33:11,568 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:33:11,720 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:33:11,723 | INFO | agents.validators.difficulty_validator | Difficulty validation PASSED
+2025-12-21 04:50:17,013 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 04:50:17,015 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:50:17,016 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:50:17,391 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:50:17,393 | INFO | agents.extractors.concept_extractor | Concept extraction completed
+2025-12-21 04:50:17,395 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2025-12-21 04:50:17,396 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:50:17,397 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:50:19,462 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:50:19,464 | INFO | agents.organizers.hierarchy_builder | Hierarchy built successfully
+2025-12-21 04:50:19,467 | INFO | agents.generators.quiz_generator | Generating quiz questions
+2025-12-21 04:50:19,468 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:50:19,469 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:50:20,012 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:50:20,014 | INFO | agents.generators.quiz_generator | Quiz generation completed
+2025-12-21 04:50:20,016 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 04:50:20,017 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:50:20,019 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:50:20,682 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:50:20,684 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 04:50:20,686 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 04:50:20,687 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:50:20,687 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:50:20,838 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:50:20,840 | INFO | agents.validators.difficulty_validator | Difficulty validation PASSED
+2025-12-21 04:52:19,266 | INFO | core.graph_visualizer | LangGraph Mermaid diagram saved at E:\Autonomous_Quiz_Agent\artifacts\graphs\quiz_agent_graph.md
+2025-12-21 04:52:19,272 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 04:52:19,274 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:52:19,275 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:52:19,718 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:52:19,719 | INFO | agents.extractors.concept_extractor | Concept extraction completed
+2025-12-21 04:52:19,721 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2025-12-21 04:52:19,721 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:52:19,722 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:52:20,212 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:52:20,214 | INFO | agents.organizers.hierarchy_builder | Hierarchy built successfully
+2025-12-21 04:52:20,216 | INFO | agents.generators.quiz_generator | Generating quiz questions
+2025-12-21 04:52:20,217 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:52:20,218 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:52:20,783 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:52:20,785 | INFO | agents.generators.quiz_generator | Quiz generation completed
+2025-12-21 04:52:20,786 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 04:52:20,787 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:52:20,787 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:52:21,467 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:52:21,471 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 04:52:21,474 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 04:52:21,476 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 04:52:21,477 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 04:52:21,623 | DEBUG | core.llm | LLM response received.
+2025-12-21 04:52:21,625 | INFO | agents.validators.difficulty_validator | Difficulty validation PASSED
