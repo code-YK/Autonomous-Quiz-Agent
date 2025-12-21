@@ -1143,3 +1143,148 @@ groq.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API K
 2025-12-21 04:52:21,477 | DEBUG | core.llm | Invoking LLM...
 2025-12-21 04:52:21,623 | DEBUG | core.llm | LLM response received.
 2025-12-21 04:52:21,625 | INFO | agents.validators.difficulty_validator | Difficulty validation PASSED
+2025-12-21 11:07:58,060 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 11:07:58,072 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:07:58,075 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:07:58,725 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:07:58,729 | INFO | agents.extractors.concept_extractor | Concept extraction completed
+2025-12-21 11:07:58,735 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2025-12-21 11:07:58,738 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:07:58,741 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:07:59,186 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:07:59,188 | INFO | agents.organizers.hierarchy_builder | Hierarchy built successfully
+2025-12-21 11:07:59,192 | INFO | agents.generators.quiz_generator | Generating quiz questions
+2025-12-21 11:07:59,195 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:07:59,198 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:07:59,769 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:07:59,771 | INFO | agents.generators.quiz_generator | Quiz generation completed
+2025-12-21 11:07:59,775 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 11:07:59,777 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:07:59,780 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:08:00,477 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:08:00,480 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 11:08:00,484 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 11:08:00,486 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:08:00,488 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:08:00,664 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:08:00,667 | WARNING | agents.validators.difficulty_validator | Difficulty validation FAILED: Input is not a JSON object
+2025-12-21 11:08:00,670 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 11:08:00,672 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:08:00,674 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:08:01,335 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:08:01,338 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 11:08:01,341 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 11:08:01,343 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:08:01,345 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:08:01,548 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:08:01,550 | WARNING | agents.validators.difficulty_validator | Difficulty validation FAILED: Input is not a JSON object
+2025-12-21 11:08:01,553 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 11:08:01,556 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:08:01,558 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:08:02,153 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:08:02,155 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 11:08:02,158 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 11:08:02,159 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:08:02,162 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:08:02,323 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:08:02,326 | INFO | agents.validators.difficulty_validator | Difficulty validation PASSED
+2025-12-21 11:09:27,431 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 11:09:27,433 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:09:27,435 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:09:27,864 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:09:27,867 | INFO | agents.extractors.concept_extractor | Concept extraction completed
+2025-12-21 11:09:27,870 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2025-12-21 11:09:27,872 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:09:27,874 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:09:28,479 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:09:28,481 | INFO | agents.organizers.hierarchy_builder | Hierarchy built successfully
+2025-12-21 11:09:28,484 | INFO | agents.generators.quiz_generator | Generating quiz questions
+2025-12-21 11:09:28,486 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:09:28,487 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:09:28,977 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:09:28,979 | INFO | agents.generators.quiz_generator | Quiz generation completed
+2025-12-21 11:09:28,983 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 11:09:28,985 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:09:28,987 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:09:29,709 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:09:29,713 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 11:09:29,719 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 11:09:29,721 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:09:29,724 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:09:29,913 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:09:29,916 | INFO | agents.validators.difficulty_validator | Difficulty validation PASSED
+2025-12-21 11:10:39,842 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 11:10:39,846 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:10:39,848 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:10:40,364 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:10:40,367 | INFO | agents.extractors.concept_extractor | Concept extraction completed
+2025-12-21 11:10:40,370 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2025-12-21 11:10:40,372 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:10:40,374 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:10:41,080 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:10:41,082 | WARNING | agents.organizers.hierarchy_builder | Hierarchy building failed: Invalid fenced JSON: Expecting value: line 38 column 49 (char 1310)
+2025-12-21 11:10:41,087 | INFO | agents.generators.quiz_generator | Generating quiz questions
+2025-12-21 11:10:41,088 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:10:41,090 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:10:41,717 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:10:41,720 | INFO | agents.generators.quiz_generator | Quiz generation completed
+2025-12-21 11:10:41,723 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 11:10:41,725 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:10:41,727 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:10:42,410 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:10:42,412 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 11:10:42,415 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 11:10:42,417 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:10:42,419 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:10:42,615 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:10:42,618 | INFO | agents.validators.difficulty_validator | Difficulty validation PASSED
+2025-12-21 11:14:05,373 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 11:14:05,378 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:14:05,383 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:14:05,790 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:14:05,792 | INFO | agents.extractors.concept_extractor | Concept extraction completed
+2025-12-21 11:14:05,795 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2025-12-21 11:14:05,797 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:14:05,800 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:14:06,597 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:14:06,600 | INFO | agents.organizers.hierarchy_builder | Hierarchy built successfully
+2025-12-21 11:14:06,604 | INFO | agents.generators.quiz_generator | Generating quiz questions
+2025-12-21 11:14:06,606 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:14:06,608 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:14:07,220 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:14:07,222 | INFO | agents.generators.quiz_generator | Quiz generation completed
+2025-12-21 11:14:07,226 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 11:14:07,228 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:14:07,231 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:14:08,419 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:14:08,423 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 11:14:08,427 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 11:14:08,431 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:14:08,435 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:14:08,575 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:14:08,580 | INFO | agents.validators.difficulty_validator | Difficulty validation PASSED
+2025-12-21 11:28:25,337 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 11:28:25,347 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:28:25,349 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:28:26,100 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:28:26,104 | INFO | agents.extractors.concept_extractor | Concept extraction completed
+2025-12-21 11:28:26,108 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2025-12-21 11:28:26,111 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:28:26,113 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:28:26,748 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:28:26,751 | INFO | agents.organizers.hierarchy_builder | Hierarchy built successfully
+2025-12-21 11:28:26,755 | INFO | agents.generators.quiz_generator | Generating quiz questions
+2025-12-21 11:28:26,756 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:28:26,758 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:28:27,364 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:28:27,366 | INFO | agents.generators.quiz_generator | Quiz generation completed
+2025-12-21 11:28:27,369 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 11:28:27,372 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:28:27,374 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:28:28,683 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:28:28,686 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 11:28:28,689 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 11:28:28,691 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:28:28,693 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:28:28,898 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:28:28,900 | INFO | agents.validators.difficulty_validator | Difficulty validation PASSED
