@@ -1288,3 +1288,28 @@ groq.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API K
 2025-12-21 11:28:28,693 | DEBUG | core.llm | Invoking LLM...
 2025-12-21 11:28:28,898 | DEBUG | core.llm | LLM response received.
 2025-12-21 11:28:28,900 | INFO | agents.validators.difficulty_validator | Difficulty validation PASSED
+2025-12-21 11:51:23,392 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2025-12-21 11:51:23,402 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:51:23,405 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:51:25,139 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:51:25,142 | INFO | agents.extractors.concept_extractor | Concept extraction completed
+2025-12-21 11:51:25,146 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2025-12-21 11:51:25,149 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:51:25,151 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:51:25,866 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:51:25,870 | INFO | agents.organizers.hierarchy_builder | Hierarchy built successfully
+2025-12-21 11:51:25,873 | INFO | agents.generators.quiz_generator | Generating quiz questions
+2025-12-21 11:51:25,874 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:51:25,877 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:51:26,574 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:51:26,577 | INFO | agents.generators.quiz_generator | Quiz generation completed
+2025-12-21 11:51:26,581 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2025-12-21 11:51:26,584 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:51:26,586 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:51:27,396 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:51:27,399 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2025-12-21 11:51:27,401 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2025-12-21 11:51:27,403 | DEBUG | core.llm | GROQ_API_KEY present: True
+2025-12-21 11:51:27,405 | DEBUG | core.llm | Invoking LLM...
+2025-12-21 11:51:27,600 | DEBUG | core.llm | LLM response received.
+2025-12-21 11:51:27,602 | INFO | agents.validators.difficulty_validator | Difficulty validation PASSED
