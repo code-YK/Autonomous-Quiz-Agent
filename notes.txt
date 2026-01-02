@@ -1,0 +1,109 @@
+autonomous-quiz-agent/
+│
+├── venv/                          # Python virtual environment (local only)
+│
+├── app/                           # API & frontend integration layer
+│   │
+│   ├── main.py                    # FastAPI entry point
+│   │
+│   ├── routes/
+│   │   ├── __init__.py
+│   │   └── quiz_routes.py         # /generate-quiz endpoint
+│   │
+│   ├── schemas/
+│   │   ├── __init__.py
+│   │   └── api_schema.py          # Request/response models
+│   │
+│   └── services/
+│       ├── __init__.py
+│       └── quiz_service.py        # Calls LangGraph pipeline
+│
+├── agents/                        # AGENT LOGIC (core intelligence)
+│   │
+│   ├── graph.py                   # LangGraph definition (nodes & edges)
+│   ├── state.py                   # Shared agent state (TypedDict / Pydantic)
+│   │
+│   ├── extractors/
+│   │   ├── __init__.py
+│   │   └── concept_extractor.py   # Extract key concepts
+│   │
+│   ├── organizers/
+│   │   ├── __init__.py
+│   │   └── hierarchy_builder.py   # Build topic → subtopic hierarchy
+│   │
+│   ├── generators/
+│   │   ├── __init__.py
+│   │   └── quiz_generator.py      # Generate 10 questions
+│   │
+│   ├── rankers/
+│   │   ├── __init__.py
+│   │   └── difficulty_ranker.py   # Assign Easy / Medium / Hard
+│   │
+│   ├── validators/
+│   │   ├── __init__.py
+│   │   └── difficulty_validator.py # Self-check + retry logic
+│   │
+│   └── prompts/                   # Prompt isolation (VERY IMPORTANT)
+│       ├── extract_prompt.py
+│       ├── hierarchy_prompt.py
+│       ├── quiz_prompt.py
+│       ├── rank_prompt.py
+│       └── validate_prompt.py
+│
+├── core/                          # Shared infrastructure
+│   │
+│   ├── llm.py                     # Groq LLM wrapper
+│   ├── config.py                  # Environment variables & constants
+│   ├── logger.py                  # Logging setup
+│   └── exceptions.py              # Custom exceptions
+│
+├── frontend/                      # UI layer (optional, replaceable)
+│   │
+│   └── streamlit_app.py           # Streamlit UI (Phase 1)
+│
+├── tests/                         # Automated tests
+│   │
+│   ├── test_graph.py              # LangGraph flow tests
+│   └── test_validation.py         # Difficulty logic tests
+│
+├── artifacts/                     # Generated outputs (optional)
+│   ├── quizzes/
+│   └── hierarchies/
+│
+├── .env                           # API keys (NOT committed)
+├── .gitignore
+├── requirements.txt
+└── README.md
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+
+Frontend
+   ↓
+app/routes/quiz_routes.py
+   ↓
+app/services/quiz_service.py
+   ↓
+agents/graph.py (LangGraph)
+   ↓
+agents/* (extract → organize → generate → rank → validate)
+   ↓
+JSON Response → Frontend
+
+
+-----------------------------------------------------------------------
+
+Frontend
+   ↓
+POST /quiz/generate
+   ↓
+quiz_routes.py
+   ↓
+agent_service.py
+   ↓
+LangGraph agent (build_graph)
+   ↓
+Structured response
