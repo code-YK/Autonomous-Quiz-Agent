@@ -5,6 +5,9 @@ langchain-core>=0.2.10
 # ---- LLM Provider (Groq via LangChain) ----
 langchain-groq>=0.1.5
 
+# ---- Observability & Tracing ----
+langsmith>=0.1.31
+
 # ---- API Layer ----
 fastapi>=0.110.0
 uvicorn>=0.29.0

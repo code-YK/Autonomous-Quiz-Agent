@@ -54,3 +54,5 @@ def build_graph():
     graph.add_conditional_edges("validate", validation_router)
 
     return graph.compile()
+
+agent = build_graph()

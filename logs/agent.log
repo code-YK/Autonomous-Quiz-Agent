@@ -1373,3 +1373,35 @@ groq.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API K
 2025-12-22 10:08:06,296 | DEBUG | core.llm | Invoking LLM...
 2025-12-22 10:08:06,471 | DEBUG | core.llm | LLM response received.
 2025-12-22 10:08:06,475 | INFO | agents.validators.difficulty_validator | Difficulty validation PASSED
+2026-01-01 19:11:00,843 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2026-01-01 19:11:21,057 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2026-01-01 19:11:37,749 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2026-01-01 19:12:07,073 | INFO | agents.generators.quiz_generator | Generating quiz questions
+2026-01-01 19:12:22,792 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2026-01-01 19:12:24,834 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2026-01-01 19:12:34,953 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2026-01-01 19:17:29,929 | INFO | agents.extractors.concept_extractor | Starting concept extraction
+2026-01-01 19:17:29,933 | DEBUG | core.llm | GROQ_API_KEY present: True
+2026-01-01 19:17:29,934 | DEBUG | core.llm | Invoking LLM...
+2026-01-01 19:17:31,051 | DEBUG | core.llm | LLM response received.
+2026-01-01 19:17:31,053 | INFO | agents.extractors.concept_extractor | Concept extraction completed
+2026-01-01 19:17:31,128 | INFO | agents.organizers.hierarchy_builder | Building concept hierarchy
+2026-01-01 19:17:31,129 | DEBUG | core.llm | GROQ_API_KEY present: True
+2026-01-01 19:17:31,130 | DEBUG | core.llm | Invoking LLM...
+2026-01-01 19:17:32,496 | DEBUG | core.llm | LLM response received.
+2026-01-01 19:17:32,498 | INFO | agents.organizers.hierarchy_builder | Hierarchy built successfully
+2026-01-01 19:17:32,623 | INFO | agents.generators.quiz_generator | Generating quiz questions
+2026-01-01 19:17:32,625 | DEBUG | core.llm | GROQ_API_KEY present: True
+2026-01-01 19:17:32,626 | DEBUG | core.llm | Invoking LLM...
+2026-01-01 19:17:33,355 | DEBUG | core.llm | LLM response received.
+2026-01-01 19:17:33,357 | INFO | agents.generators.quiz_generator | Quiz generation completed
+2026-01-01 19:17:33,447 | INFO | agents.rankers.difficulty_ranker | Assigning difficulty levels
+2026-01-01 19:17:33,449 | DEBUG | core.llm | GROQ_API_KEY present: True
+2026-01-01 19:17:33,451 | DEBUG | core.llm | Invoking LLM...
+2026-01-01 19:17:34,566 | DEBUG | core.llm | LLM response received.
+2026-01-01 19:17:34,568 | INFO | agents.rankers.difficulty_ranker | Difficulty ranking completed
+2026-01-01 19:17:34,778 | INFO | agents.validators.difficulty_validator | Validating difficulty logic
+2026-01-01 19:17:34,780 | DEBUG | core.llm | GROQ_API_KEY present: True
+2026-01-01 19:17:34,782 | DEBUG | core.llm | Invoking LLM...
+2026-01-01 19:17:34,919 | DEBUG | core.llm | LLM response received.
+2026-01-01 19:17:34,922 | INFO | agents.validators.difficulty_validator | Difficulty validation PASSED
